@@ -1,0 +1,108 @@
+.btn-primary {
+    border: none;
+    outline: none;
+    padding: 5px 20px;
+    background-color: #f8f8f8;
+    color: #266bec;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-right: 15px;
+}
+
+.btn-primary:hover {
+    background-color: #57c0e3;
+}
+
+.filters {
+    padding-bottom: 30px;
+}
+
+.example-item {
+    border: none;
+    margin-bottom: 30px;
+    border-radius: 4px; 
+    display: none;
+}
+
+.example-item a {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px; 
+}
+
+.example-item a img {
+    position: relative;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s all ease-in-out;
+    -o-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out; 
+}
+
+.example-item .item-wrap {
+    display: block;
+    position: relative; 
+}
+
+.example-item .item-wrap:after {
+    z-index: 2;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: .3s all ease-in-out;
+    -o-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out; 
+}
+
+.example-item .item-wrap > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    -ms-transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
+    color: #fff;
+    font-size: 1.7rem;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease; 
+}
+
+.example-item .item-wrap:hover:after {
+    opacity: 1;
+    visibility: visible; 
+}
+
+.example-item .item-wrap:hover span {
+    margin-top: 0px;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1); 
+}
+
+.example-item:hover a img {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-transition: .3s all ease-in-out;
+    -o-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out; 
+}
+
+.show {
+  display: block;
+  width: 100%;
+}

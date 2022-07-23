@@ -1,0 +1,50 @@
+.section {
+    padding-top: 10vh;
+    padding-bottom: 20vh;
+}
+
+.section h1 {
+    font-size: 44pt;
+    padding-left: 18px;
+    margin-bottom: 50px;
+    background-image: linear-gradient(to right, #266bec, #57c0e3);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: 25% 2px;
+}
+
+.section p {
+    text-align: left;
+}
+
+.section-light {
+    background-color: #252525;
+}
+
+.section-blue {
+    background-image: linear-gradient(to right, #266bec, #57c0e3);
+}
+
+.section-blue h1 {
+    font-size: 44pt;
+    padding-left: 18px;
+    padding-bottom: 8px;
+    margin-bottom: 50px;
+    text-align: center;
+    background-image: linear-gradient(to right, #dddddd, #dddddd);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 70% 2px;
+}
+
+@media screen and (max-width: 500px) {
+    .section h1 {
+            background-size: 60% 2px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .section h1 {
+        background-size: 70% 2px;
+    }
+}

@@ -1,0 +1,184 @@
+nav {
+    overflow: hidden;
+    padding-top: 30px; 
+    padding-bottom: 20px; 
+    padding-left: 70px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: background-color 0.4s ease-out;
+    z-index: 10;
+}
+
+nav button {
+    display: none;
+}
+
+nav a {
+    display: inline-block;
+    color: #ffffff;
+    padding: 14px 16px;
+    font-size: 20px;
+    left: 0%;
+    background-image: linear-gradient(to right, #266bec, #57c0e3);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    transition: background-size .5s ease;
+}
+
+nav ul {
+    padding-top: 15px;
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    padding-right: 25px;
+}
+
+nav a {
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+nav a.active {
+  color: #57c0e3;
+  font-family: "Azo Sans";
+}
+
+nav a:hover {
+    color: #266bec;
+    text-decoration: none;
+}
+
+nav.scroll1 {
+    background-color: #ebebebfe;
+    color: #ffffff;
+    transition: background-color 0.4s ease-out;
+    transition: padding .5s ease-out;
+    -webkit-box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.4);
+}
+
+nav.scroll1 a {
+    color: #000000;
+    background-image: linear-gradient(to right, #266bec, #57c0e3);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .5s ease;
+}
+
+nav.scroll1 a:hover {
+    background-size: 100% 2px;
+}
+
+nav.scroll1 a.active {
+    color:#266bec;
+    background-size: 100% 2px;
+}
+
+nav.scroll2 {
+    background-color: #ebebebfe;
+    color: #ffffff;
+    padding: 10px;
+    transition: padding .5s ease-out;
+    -webkit-box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.4);
+}
+
+nav.scroll2 a {
+    color: #000000;
+    background-image: linear-gradient(to right, #266bec, #57c0e3);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .5s ease;
+}
+
+nav.scroll2 a:hover {
+    background-size: 100% 2px;
+}
+
+nav.scroll2 a.active {
+    color:#266bec;
+    background-size: 100% 2px;
+}
+
+@media screen and (max-width: 500px) {
+    nav {
+        background-color: #313131;
+        height: 20vh;
+        transition: height 0.3s ease-out;
+    }
+
+    nav.scroll1 {
+        transition: height 0.3s ease-out;
+    }
+
+    nav a:hover {
+        background-size: 100% 2px;
+    }
+
+    nav.scroll2 {
+        transition: height 0.3s ease-out;
+        padding-top: 50px; 
+        padding-bottom: 50px; 
+        padding-left: 70px;
+    }
+
+    nav ul {
+        display: block;
+        list-style: none;
+    }
+
+    nav a {
+        background-image: linear-gradient(to right, #266bec, #57c0e3);
+        background-position: bottom left;
+        background-repeat: no-repeat;
+        background-size: 0% 2px;
+        transition: background-size .5s ease;
+    }
+
+    nav a.active {
+        background-image: linear-gradient(to right, #266bec, #57c0e3);
+        background-position: bottom left;
+        background-repeat: no-repeat;
+        background-size: 100% 2px;
+        transition: background-size .5s ease;
+    }
+
+    nav li {
+        padding-bottom: 30px;
+    }
+
+    nav button {
+        display: block;
+        top: 50%;
+        background: transparent;
+        border: none;
+        color: #ffffff;
+        font-size: 26pt;
+    }
+
+    nav.scroll1 button {
+        color: #1a1a1a;
+    }
+
+    nav.scroll2 button {
+        color: #1a1a1a;
+    }
+
+    nav.expanded {
+        height: 90vh;
+    }
+
+    .nav-content {
+        padding-top: 70px;
+        position: absolute;
+        max-height: 0;
+        z-index: 1;
+        overflow: hidden;
+    }
+}

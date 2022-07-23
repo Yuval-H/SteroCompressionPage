@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+  <link rel="icon" type="image/png" href="images/antivirus-icon.svg">
+
+  <title>Image Compression</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/navbar.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/title.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/section.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/service.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/examples.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+
+  <script src="javascripts/navbar.js"></script>
+
+</head>
+
+<body>
+  <nav id="navbar">
+    <button class="nav-button" onclick="navClick()"><i class="fas fa-bars"></i></button>
+    <ul class="nav-content">
+      <li><a href="#abstract">abstract</a></li>
+      <li><a href="#Architecture" >Architecture</a></li>
+      <li><a href="#images">Visual results and comparisons with other methods</a></li>
+    </ul>
+  </nav>
+  <section class="header">
+    <div class="row">
+      <div class="col">
+        <img src="images/Teaser/Teaser.png" class="header-logo">
+        <h1 class="header-title">A Two-Level Auto-Encoder <br>for Distributed Stereo
+          Coding</h1>
+      </div>
+    </div>
+  </section><br>
+
+  <section class="section section-light" id="abstract">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>Abstract</h1>
+        </div>
+        <div class="col-lg-6">
+          <p>
+            We propose a new technique for stereo image compression that is based on Distributed Source Coding (DSC). In
+            our
+            setting, two cameras transmit their image back to a processing unit. Naively doing so requires each camera
+            to compress and transmit
+            its image independently. However, the images are correlated because they observe the same scene, and our
+            goal is to take advantage
+            of this fact. In our solution, one camera, assume the left camera, sends its image to the processing unit,
+            as before. The right camera,
+            on the other hand, transmits its image conditioned on the left image, even though the two cameras do not
+            communicate. The
+            processing unit can then decode the right image, using the left image. The solution is based on a two level
+            Auto-Encoder (AE). During
+            training, the first level AE learns a standard single image compression code. The second level AE further
+            compresses the code of the
+            right image, conditioned on the code of the left image. During inference, the left camera uses the first
+            level AE to transmit its image to
+            the processing unit. The right camera, on the other hand, uses the encoders of both levels to transmit its
+            code to the processing unit.
+            The processing unit uses the top level decoder to recover the left image, and the decoders of both levels,
+            as well as the recovered left
+            image, to recover the right image. The system achieves state of the art results in image compression on
+            several popular datasets.
+          </p>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4">
+          <img src="images/Architecture/Architecture _General.jpg" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="Architecture">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mb-5">
+          <h1>Architecture</h1>
+        </div>
+        <div class="col-lg-6">
+          <p>
+            Our architecture
+          </p>
+        </div>
+        <div class="col-lg-9"></div>
+        <div class="col-lg-7">
+          <img src="images/Architecture/Architecture _Full.png" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section section-light" id="images">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mb-5">
+          <h1>Visual results and comparisons with other methods</h1>
+        </div>
+        <div class="col-lg-9">
+          <p>
+		  In this section we show the visual results of our compression system.
+          <br>Shown here are three images: the side information image, the input image (to be compressed), and our system's compressed image.
+		  <br>In the first two examples we also show the results of sota single image compression technique(Mentzer et al), and another method of DSC image compression that relies on side information(SI) images(Ayzik & Avidan).
+          </p>
+        </div>
+      </div>
+      <div class="row" style="padding-top: 10vh;">
+        <div class="col-lg-2" style="margin-top:-30px">
+          <button
+            onclick="document.getElementById('example1').src='images/examples_full_images/SI_155_10.png'">
+            SI image
+          </button>
+		  <button
+            onclick="document.getElementById('example1').src='images/examples_full_images/Original_155_10.png'">
+            Original image
+          </button>
+          <button
+            onclick="document.getElementById('example1').src='images/examples_full_images/Mentzer_155_xdec_005241834.png'">
+            Mentzer etal 0.05bpp
+          </button>
+          <button
+            onclick="document.getElementById('example1').src='images/examples_full_images/Ayzik_155_xfinal_0051195394.png'">
+            Ayzik & Avidan 0.05bpp
+          </button>
+          <button
+            onclick="document.getElementById('example1').src='images/examples_full_images/Ours_final_155_10_031bpp.png'">
+            Ours 0.031bpp
+          </button>
+        </div>
+        <div class="col-lg-10">
+          <img src="images/examples_full_images/Ours_final_155_10_031bpp.png" alt="" class="example-img" id="example1">
+        </div>
+      </div>
+	  
+	 <div class="row" style="padding-top: 10vh;">
+        <div class="col-lg-2" style="margin-top:-30px">
+          <button
+            onclick="document.getElementById('example2').src='images/examples_full_images/SI_128_10.png'">
+            SI image
+          </button>
+		  <button
+            onclick="document.getElementById('example2').src='images/examples_full_images/Original_128_10.png'">
+            Original image
+          </button>
+          <button
+            onclick="document.getElementById('example2').src='images/examples_full_images/Mentzer_328_xdec_003437284.png'">
+            Mentzer etal 0.034bpp
+          </button>
+          <button
+            onclick="document.getElementById('example2').src='images/examples_full_images/Ayzik_328_xfinal_00308292.png'">
+            Ayzik & Avidan 0.031bpp
+          </button>
+          <button
+            onclick="document.getElementById('example2').src='images/examples_full_images/Ours_final_128_10_0031bpp.png'">
+            Ours 0.031bpp
+          </button>
+        </div>
+        <div class="col-lg-10">
+          <img src="images/examples_full_images/Original_128_10.png" alt="" class="example-img" id="example2">
+        </div>
+      </div>
+	  
+	   <div class="row" style="padding-top: 10vh;">
+        <div class="col-lg-2" style="margin-top:-30px">
+          <button
+            onclick="document.getElementById('exampleHolopix1').src='images/examples_full_images/HoloPix/SI_2b46_left.jpg'">
+            SI image
+          </button>
+		  <button
+            onclick="document.getElementById('exampleHolopix1').src='images/examples_full_images/HoloPix/Original_2b46_left.jpg'">
+            Original image
+          </button>
+          <button
+            onclick="document.getElementById('exampleHolopix1').src='images/examples_full_images/HoloPix/Rec_0.9820982_2b46_left.jpg'">
+            Ours 0.031bpp
+          </button>
+        </div>
+        <div class="col-lg-10">
+          <img src="images/examples_full_images/HoloPix/Original_2b46_left.jpg" alt="" class="example-img" id="exampleHolopix1">
+        </div>
+      </div>
+	  
+	  <div class="row" style="padding-top: 10vh;">
+        <div class="col-lg-2" style="margin-top:-30px">
+          <button
+            onclick="document.getElementById('exampleHolopix2').src='images/examples_full_images/HoloPix/SI_bLhp_left.jpg'">
+            SI image
+          </button>
+		  <button
+            onclick="document.getElementById('exampleHolopix2').src='images/examples_full_images/HoloPix/Original_bLhp_left.jpg'">
+            Original image
+          </button>
+          <button
+            onclick="document.getElementById('exampleHolopix2').src='images/examples_full_images/HoloPix/Rec_0.9852403_bLhp_left.jpg'">
+            Ours 0.031bpp
+          </button>
+		  <button
+            onclick="document.getElementById('exampleHolopix2').src='images/examples_full_images/HoloPix/Rec_0125_0.98988193_bLhp_left.jpg'">
+            Ours 0.125bpp
+          </button>
+        </div>
+        <div class="col-lg-10">
+          <img src="images/examples_full_images/HoloPix/Original_bLhp_left.jpg" alt="" class="example-img" id="exampleHolopix2">
+        </div>
+      </div>
+	  
+	  <div class="row" style="padding-top: 10vh;">
+        <div class="col-lg-2" style="margin-top:-30px">
+          <button
+            onclick="document.getElementById('exampleHolopix3').src='images/examples_full_images/HoloPix/SI_esQl_left.jpg'">
+            SI image
+          </button>
+		  <button
+            onclick="document.getElementById('exampleHolopix3').src='images/examples_full_images/HoloPix/Original_esQl_left.jpg'">
+            Original image
+          </button>
+          <button
+            onclick="document.getElementById('exampleHolopix3').src='images/examples_full_images/HoloPix/Rec_0.9905888_esQl_left.jpg'">
+            Ours 0.031bpp
+          </button>
+		  <button
+            onclick="document.getElementById('exampleHolopix3').src='images/examples_full_images/HoloPix/Rec_0125_0.99414545_esQl_left.jpg'">
+            Ours 0.125bpp
+          </button>
+        </div>
+        <div class="col-lg-10">
+          <img src="images/examples_full_images/HoloPix/Original_esQl_left.jpg" alt="" class="example-img" id="exampleHolopix3">
+        </div>
+      </div>
+	  
+	  <div class="row" style="padding-top: 10vh;">
+        <div class="col-lg-2" style="margin-top:-30px">
+          <button
+            onclick="document.getElementById('exampleHolopix4').src='images/examples_full_images/HoloPix/SI_w6h9_left.jpg'">
+            SI image
+          </button>
+		  <button
+            onclick="document.getElementById('exampleHolopix4').src='images/examples_full_images/HoloPix/Original_w6h9_left.jpg'">
+            Original image
+          </button>
+          <button
+            onclick="document.getElementById('exampleHolopix4').src='images/examples_full_images/HoloPix/Rec_0.9835147_w6h9_left.jpg'">
+            Ours 0.031bpp
+          </button>
+		  <button
+            onclick="document.getElementById('exampleHolopix4').src='images/examples_full_images/HoloPix/Rec_0125_0.98744804_w6h9_left.jpg'">
+            Ours 0.125bpp
+          </button>
+        </div>
+        <div class="col-lg-10">
+          <img src="images/examples_full_images/HoloPix/Original_w6h9_left.jpg" alt="" class="example-img" id="exampleHolopix4">
+        </div>
+      </div>
+	  
+	  
+	  <div class="row" style="padding-top: 10vh;">
+        <div class="col-lg-2" style="margin-top:-30px">
+          <button
+            onclick="document.getElementById('exampleHolopix5').src='images/examples_full_images/HoloPix/SI_3v6T_left.jpg'">
+            SI image
+          </button>
+		  <button
+            onclick="document.getElementById('exampleHolopix5').src='images/examples_full_images/HoloPix/Original_3v6T_left.jpg'">
+            Original image
+          </button>
+          <button
+            onclick="document.getElementById('exampleHolopix5').src='images/examples_full_images/HoloPix/Rec_0.99415964_3v6T_left.jpg'">
+            Ours 0.031bpp
+          </button>
+		  <button
+            onclick="document.getElementById('exampleHolopix5').src='images/examples_full_images/HoloPix/Rec_016_0.9963321_3v6T_left.jpg'">
+            Ours 0.16bpp
+          </button>
+        </div>
+        <div class="col-lg-10">
+          <img src="images/examples_full_images/HoloPix/Original_3v6T_left.jpg" alt="" class="example-img" id="exampleHolopix5">
+        </div>
+      </div>
+	  
+
+
+    </div>
+  </section>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="javascripts/scroll.js"></script>
+<script src="javascripts/examples.js"></script>
+
+<script>
+  var coll = document.getElementsByClassName("nav-button");
+  var nav = document.getElementById("navbar");
+  var i;
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        nav.classList.remove("expanded");
+        console.log(nav);
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        nav.classList.add("expanded");
+        console.log(nav);
+      }
+    });
+  }
+</script>
+
+</html>
