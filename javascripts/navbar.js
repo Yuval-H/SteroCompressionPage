@@ -1,11 +1,11 @@
 window.onscroll = () => {
   const nav = document.querySelector('#navbar');
   if (this.scrollY <= 20)
-    nav.className = '';
+    nav.className = 'navbar navbar-expand-lg navbar-light';
   else if (this.scrollY <= 150)
-    nav.className = 'scroll1'
+    nav.className = 'navbar navbar-expand-lg navbar-light scroll1'
   else
-    nav.className = 'scroll2';
+    nav.className = 'navbar navbar-expand-lg navbar-light scroll2';
 };
 
 $(document).ready(function () {

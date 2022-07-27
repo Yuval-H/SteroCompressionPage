@@ -19,7 +19,6 @@
 
   <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
   <link rel="stylesheet" type="text/css" href="stylesheets/navbar.css" />
-  <link rel="stylesheet" type="text/css" href="stylesheets/title.css" />
   <link rel="stylesheet" type="text/css" href="stylesheets/section.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/service.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/examples.css">
@@ -33,21 +32,62 @@
 </head>
 
 <body>
-  <nav id="navbar">
-    <button class="nav-button" onclick="navClick()"><i class="fas fa-bars"></i></button>
-    <ul class="nav-content">
-      <li><a href="#abstract">abstract</a></li>
-      <li><a href="#Architecture" >Architecture</a></li>
-      <li><a href="#images">Visual results and comparisons with other methods</a></li>
-    </ul>
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-container"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar-container">
+        <ul class="nav-content navbar-nav me-auto mb-2 mb-lg-0">
+          <li><a href="#abstract">abstract</a></li>
+          <li><a href="#Architecture">Architecture</a></li>
+          <li><a href="#images">Visual results and comparisons with other methods</a></li>
+        </ul>
+      </div>
+    </div>
+
+
   </nav>
   <section class="header">
-    <div class="row">
-      <div class="col">
-        <img src="images/Teaser/Teaser.png" class="header-logo">
-        <h1 class="header-title">A Two-Level Auto-Encoder <br>for Distributed Stereo
-          Coding</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img src="images/Teaser/Teaser.png" class="header-logo">
+          <h1 class="header-title">A Two-Level Auto-Encoder <br>for Distributed Stereo
+            Coding</h1>
+        </div>
       </div>
+
+      <div class="row justify-content-center services">
+
+        <div class="col-3" data-aos="fade-up" data-aos-delay="100">
+          <a href="https://www.github.com" target="_blank">
+            <div class="service">
+              <img src="images/github.svg" alt="Image" class="img-fluid" />
+            </div>
+          </a>
+        </div>
+
+        <div class="col-3" data-aos="fade-up" data-aos-delay="">
+          <a href="https://www.linkedin.com" target="_blank">
+            <div class="service">
+              <img src="images/linkedin.svg" alt="Image" class="img-fluid" />
+            </div>
+          </a>
+        </div>
+
+        <div class="col-3" data-aos="fade-up" data-aos-delay="">
+          <a href="https://www.google.com" target="_blank">
+            <div class="service">
+              <img src="images/paper.svg" alt="Image" class="img-fluid" />
+            </div>
+          </a>
+        </div>
+
+      </div>
+
     </div>
   </section><br>
 
@@ -55,7 +95,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h1>Abstract</h1>
+          <h1 class="section-title">Abstract</h1>
         </div>
         <div class="col-lg-6">
           <p>
@@ -95,7 +135,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 mb-5">
-          <h1>Architecture</h1>
+          <h1 class="section-title">Architecture</h1>
         </div>
         <div class="col-lg-6">
           <p>
@@ -111,195 +151,225 @@
   </section>
 
 
+
   <section class="section section-light" id="images">
     <div class="container">
       <div class="row">
         <div class="col-12 mb-5">
-          <h1>Visual results and comparisons with other methods</h1>
+          <h1 class="section-title">Visual results and comparisons with other methods</h1>
         </div>
         <div class="col-lg-9">
           <p>
-		  In this section we show the visual results of our compression system.
-          <br>Shown here are three images: the side information image, the input image (to be compressed), and our system's compressed image.
-		  <br>In the first two examples we also show the results of sota single image compression technique(Mentzer et al), and another method of DSC image compression that relies on side information(SI) images(Ayzik & Avidan).
+            In this section we show the visual results of our compression system.
+            <br>Shown here are three images: the side information image, the input image (to be compressed), and our
+            system's compressed image.
+            <br>In the first two examples we also show the results of sota single image compression technique(Mentzer et
+            al), and another method of DSC image compression that relies on side information(SI) images(Ayzik & Avidan).
           </p>
         </div>
       </div>
       <div class="row" style="padding-top: 10vh;">
-        <div class="col-lg-2" style="margin-top:-30px">
-          <button
+        <div class="btn-group" role="group" aria-label="buttons">
+          <button class="btn btn-primary"
             onclick="document.getElementById('example1').src='images/examples_full_images/SI_155_10.png'">
             SI image
           </button>
-		  <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('example1').src='images/examples_full_images/Original_155_10.png'">
             Original image
           </button>
-          <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('example1').src='images/examples_full_images/Mentzer_155_xdec_005241834.png'">
             Mentzer etal 0.05bpp
           </button>
-          <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('example1').src='images/examples_full_images/Ayzik_155_xfinal_0051195394.png'">
             Ayzik & Avidan 0.05bpp
           </button>
-          <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('example1').src='images/examples_full_images/Ours_final_155_10_031bpp.png'">
             Ours 0.031bpp
           </button>
         </div>
-        <div class="col-lg-10">
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
           <img src="images/examples_full_images/Ours_final_155_10_031bpp.png" alt="" class="example-img" id="example1">
         </div>
       </div>
-	  
-	 <div class="row" style="padding-top: 10vh;">
-        <div class="col-lg-2" style="margin-top:-30px">
-          <button
+
+      <hr>
+
+      <div class="row" style="padding-top: 10vh;">
+        <div class="btn-group" role="group" aria-label="buttons">
+          <button class="btn btn-primary"
             onclick="document.getElementById('example2').src='images/examples_full_images/SI_128_10.png'">
             SI image
           </button>
-		  <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('example2').src='images/examples_full_images/Original_128_10.png'">
             Original image
           </button>
-          <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('example2').src='images/examples_full_images/Mentzer_328_xdec_003437284.png'">
             Mentzer etal 0.034bpp
           </button>
-          <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('example2').src='images/examples_full_images/Ayzik_328_xfinal_00308292.png'">
             Ayzik & Avidan 0.031bpp
           </button>
-          <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('example2').src='images/examples_full_images/Ours_final_128_10_0031bpp.png'">
             Ours 0.031bpp
           </button>
         </div>
-        <div class="col-lg-10">
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
           <img src="images/examples_full_images/Original_128_10.png" alt="" class="example-img" id="example2">
         </div>
       </div>
-	  
-	   <div class="row" style="padding-top: 10vh;">
-        <div class="col-lg-2" style="margin-top:-30px">
-          <button
+
+      <hr>
+
+      <div class="row" style="padding-top: 10vh;">
+        <div class="btn-group" role="group" aria-label="buttons">
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix1').src='images/examples_full_images/HoloPix/SI_2b46_left.jpg'">
             SI image
           </button>
-		  <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix1').src='images/examples_full_images/HoloPix/Original_2b46_left.jpg'">
             Original image
           </button>
-          <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix1').src='images/examples_full_images/HoloPix/Rec_0.9820982_2b46_left.jpg'">
             Ours 0.031bpp
           </button>
         </div>
-        <div class="col-lg-10">
-          <img src="images/examples_full_images/HoloPix/Original_2b46_left.jpg" alt="" class="example-img" id="exampleHolopix1">
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <img src="images/examples_full_images/HoloPix/Original_2b46_left.jpg" alt="" class="example-img"
+            id="exampleHolopix1">
         </div>
       </div>
-	  
-	  <div class="row" style="padding-top: 10vh;">
-        <div class="col-lg-2" style="margin-top:-30px">
-          <button
+
+      <hr>
+
+      <div class="row" style="padding-top: 10vh;">
+        <div class="btn-group" role="group" aria-label="buttons">
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix2').src='images/examples_full_images/HoloPix/SI_bLhp_left.jpg'">
             SI image
           </button>
-		  <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix2').src='images/examples_full_images/HoloPix/Original_bLhp_left.jpg'">
             Original image
           </button>
-          <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix2').src='images/examples_full_images/HoloPix/Rec_0.9852403_bLhp_left.jpg'">
             Ours 0.031bpp
           </button>
-		  <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix2').src='images/examples_full_images/HoloPix/Rec_0125_0.98988193_bLhp_left.jpg'">
             Ours 0.125bpp
           </button>
         </div>
-        <div class="col-lg-10">
-          <img src="images/examples_full_images/HoloPix/Original_bLhp_left.jpg" alt="" class="example-img" id="exampleHolopix2">
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <img src="images/examples_full_images/HoloPix/Original_bLhp_left.jpg" alt="" class="example-img"
+            id="exampleHolopix2">
         </div>
       </div>
-	  
-	  <div class="row" style="padding-top: 10vh;">
-        <div class="col-lg-2" style="margin-top:-30px">
-          <button
+
+      <hr>
+
+      <div class="row" style="padding-top: 10vh;">
+        <div class="btn-group" role="group" aria-label="buttons">
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix3').src='images/examples_full_images/HoloPix/SI_esQl_left.jpg'">
             SI image
           </button>
-		  <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix3').src='images/examples_full_images/HoloPix/Original_esQl_left.jpg'">
             Original image
           </button>
-          <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix3').src='images/examples_full_images/HoloPix/Rec_0.9905888_esQl_left.jpg'">
             Ours 0.031bpp
           </button>
-		  <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix3').src='images/examples_full_images/HoloPix/Rec_0125_0.99414545_esQl_left.jpg'">
             Ours 0.125bpp
           </button>
         </div>
-        <div class="col-lg-10">
-          <img src="images/examples_full_images/HoloPix/Original_esQl_left.jpg" alt="" class="example-img" id="exampleHolopix3">
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <img src="images/examples_full_images/HoloPix/Original_esQl_left.jpg" alt="" class="example-img"
+            id="exampleHolopix3">
         </div>
       </div>
-	  
-	  <div class="row" style="padding-top: 10vh;">
-        <div class="col-lg-2" style="margin-top:-30px">
-          <button
+
+      <hr>
+
+      <div class="row" style="padding-top: 10vh;">
+        <div class="btn-group" role="group" aria-label="buttons">
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix4').src='images/examples_full_images/HoloPix/SI_w6h9_left.jpg'">
             SI image
           </button>
-		  <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix4').src='images/examples_full_images/HoloPix/Original_w6h9_left.jpg'">
             Original image
           </button>
-          <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix4').src='images/examples_full_images/HoloPix/Rec_0.9835147_w6h9_left.jpg'">
             Ours 0.031bpp
           </button>
-		  <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix4').src='images/examples_full_images/HoloPix/Rec_0125_0.98744804_w6h9_left.jpg'">
             Ours 0.125bpp
           </button>
         </div>
-        <div class="col-lg-10">
-          <img src="images/examples_full_images/HoloPix/Original_w6h9_left.jpg" alt="" class="example-img" id="exampleHolopix4">
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <img src="images/examples_full_images/HoloPix/Original_w6h9_left.jpg" alt="" class="example-img"
+            id="exampleHolopix4">
         </div>
       </div>
-	  
-	  
-	  <div class="row" style="padding-top: 10vh;">
-        <div class="col-lg-2" style="margin-top:-30px">
-          <button
+
+      <hr>
+
+      <div class="row" style="padding-top: 10vh;">
+        <div class="btn-group" role="group" aria-label="buttons">
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix5').src='images/examples_full_images/HoloPix/SI_3v6T_left.jpg'">
             SI image
           </button>
-		  <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix5').src='images/examples_full_images/HoloPix/Original_3v6T_left.jpg'">
             Original image
           </button>
-          <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix5').src='images/examples_full_images/HoloPix/Rec_0.99415964_3v6T_left.jpg'">
             Ours 0.031bpp
           </button>
-		  <button
+          <button class="btn btn-primary"
             onclick="document.getElementById('exampleHolopix5').src='images/examples_full_images/HoloPix/Rec_016_0.9963321_3v6T_left.jpg'">
             Ours 0.16bpp
           </button>
         </div>
-        <div class="col-lg-10">
-          <img src="images/examples_full_images/HoloPix/Original_3v6T_left.jpg" alt="" class="example-img" id="exampleHolopix5">
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <img src="images/examples_full_images/HoloPix/Original_3v6T_left.jpg" alt="" class="example-img"
+            id="exampleHolopix5">
         </div>
       </div>
-	  
-
-
     </div>
   </section>
 

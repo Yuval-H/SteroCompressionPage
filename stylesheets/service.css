@@ -1,0 +1,67 @@
+.services {
+    margin-top: 20px;
+}
+
+.service {
+    margin-top: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #252525;
+    -webkit-box-shadow: 0 1px 2px 0px rgba(179, 179, 179, 0.1);
+    box-shadow: 0 1px 2px 0px rgba(179, 179, 179, 0.1);
+    -webkit-transition: .3s all ease-in-out;
+    -o-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out;
+    top: 0;
+    position: relative; 
+    border-radius: 8px;
+    width: 200px;
+    height: 200px;
+}
+
+.service {
+    margin: 0 auto;
+    display: block;
+}
+
+.service img {
+    width: 150px;
+}
+
+.service:hover {
+    -webkit-box-shadow: 0 8px 50px -5px rgba(179, 179, 179, 0.1);
+    box-shadow: 0 8px 50px -5px rgba(179, 179, 179, 0.1);
+    top: -2px; 
+}
+
+a {
+    text-decoration: none;
+}
+
+a h3, img {
+    color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+    .service {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 120px;
+        height: 120px;
+        
+        border: solid 2px #ffffff;
+    }
+    
+    .services {
+        margin-top: 50px;
+    }
+
+    .services .col-3 {
+        margin-right: 15px;
+    }
+
+    .service img{
+        padding: 0%;
+       width: 80px;
+    }
+  }
