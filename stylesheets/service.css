@@ -46,8 +46,8 @@ a h3, img {
     .service {
         padding-top: 20px;
         padding-bottom: 20px;
-        width: 120px;
-        height: 120px;
+        width: 110px;
+        height: 110px;
         
         border: solid 2px #ffffff;
     }
@@ -57,11 +57,11 @@ a h3, img {
     }
 
     .services .col-3 {
-        margin-right: 15px;
+        margin-right: 8vw;
     }
 
     .service img{
         padding: 0%;
-       width: 80px;
+        width: 70px;
     }
   }
